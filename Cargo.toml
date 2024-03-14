@@ -1,0 +1,26 @@
+[package]
+name = "rust_image_tools"
+version = "0.1.0"
+edition = "2021"
+authors = ["Josh Чернов"]
+description = "A simple rust application used for image converting, sizing and information"
+homepage = "https://rustyimagetools.github.io/"
+repository = "https://github.com/RustyImageTools/rusty-image-tools-wasm"
+license-file = "LICENSE"
+keywords = ["images", "editing"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+image = { git = "https://github.com/image-rs/image.git", branch = "main" }
+wasm-bindgen = "0.2.92"
+kamadak-exif = "0.5.5"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde-wasm-bindgen = "0.6.5"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[patch.crates-io]
+image-webp = { git = "https://github.com/image-rs/image-webp", branch = "main" }
